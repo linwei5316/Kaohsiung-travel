@@ -1,0 +1,478 @@
+//索引：使用方法 => 直接查詢(CTRL+D)標頭_數字_(包含星號)即可跳轉到相對標題
+//  _1_ 變數、mixin、清除和定義預設樣式
+//  _2_ 最外層容器wrapper樣式
+//  _3_ 按鈕樣式
+//容器內分為：頭部容器header/內容容器.content/頁尾資訊容器footer
+//  _4_ header頭部(內含熱門行政區按鈕區塊)
+//  _5_ 景點清單容器樣式
+//  _6_ 景點清單個別item樣式
+//  _7_ 查看景點清單詳細內容的彈窗與遮罩
+//  _8_ 分頁標籤樣式
+//  _9_ 頁尾資訊容器footer樣式
+//  _10_ 跳至畫面頂部固定按鈕
+//  _11_ RWD
+//  _12_ 動畫keyframes
+
+
+// _1_ 變數與mixin
+$colorBlue: #559AC8
+$colorYellow: #F5D005
+$colorPink: #FFA782
+$colorPurple: #8A82CC
+$colorGray: #4A4A4A
+  
+=size($w,$h:$w)
+  width: $w
+  height: $h
+
+*
+  font-family: 'Microsoft JhengHei'
+
+html,body
+  margin: 0
+  padding: 0
+  background: #eee
+  
+h1,h2,h3,h4,h5,h6
+  margin-top: 0
+  margin-bottom: 15px
+  font-weight: 400
+p
+  margin-top: 0
+  margin-bottom: 10px
+  
+h1
+  font-size: 40px
+h2
+  font-size: 36px
+h3
+  font-size: 28px
+h4
+  font-size: 24px
+h5
+  font-size: 18px
+h6
+  font-size: 16px
+a
+  text-decoration: none
+//------------------------------
+
+  
+// _2_ 最外層容器wrapper樣式
+.wrapper
+  max-width: 1024px
+  margin: 0 auto
+  background: #fff
+  box-shadow: 0 0 20px rgba(black,.2)
+//------------------------------
+
+
+// _3_ 按鈕樣式
+input[type='button']
+  appearance: none
+  padding: 9px 34px
+  font-size: 20px
+  color: #fff
+  border: none
+  border-radius: 5px
+  transition: .3s
+  cursor: pointer
+  &:hover
+    opacity: 0.7
+  &:active
+    opacity: 1
+//------------------------------
+
+
+// _4_ header頭部(包含熱門行政區按鈕區塊)
+header
+  padding: 100px 0
+  position: relative
+  text-align: center
+  background: url('https://hexschool.github.io/JavaScript_HomeWork/assets/the-urban-landscape-1698285.png')
+  h1
+    font-weight: 400
+    color: #fff
+    margin-bottom: 96px
+    letter-spacing: 4px
+  select
+    width: 452px
+    height: 48px
+    background: rgba(white,.7)
+    border: 3px solid #fff
+    border-radius: 3px
+    font-size: 18px
+  .hot
+    position: absolute
+    left: 50%
+    top: 93%
+    transform: translateX(-50%)
+    width: 80%
+    background: #fff
+    border-radius: 5px
+    padding: 18px
+    box-shadow: 0 0 10px rgba(black,.2)
+    .box
+      display: flex
+      justify-content: space-around
+      align-items: center
+      .pink
+        background: $colorPink
+      .yellow
+        background: $colorYellow
+      .purple
+        background: $colorPurple
+      .blue
+        background: $colorBlue
+//------------------------------
+      
+
+// _5_ 景點清單容器樣式
+.content
+  text-align: center
+  padding: 40px
+  padding-top: 140px
+  .line
+    border-bottom: 2px dashed $colorBlue
+    height: 2px
+    position: relative
+    margin: 0 20px 76px 20px
+    .circle
+      position: absolute
+      left: 50%
+      top: 0
+      transform: translate(-50%,-40%)
+      +size(24px)
+      background: #fff
+      border: 2px solid $colorBlue
+      border-radius: 50%
+      .symbol
+        position: absolute
+        left: 50%
+        top: 55%
+        transform: translate(-50%,-50%)
+        width: 20px
+        height: 10px
+        // border: 1px solid red
+        overflow: hidden
+        &::after
+          content: ''
+          position: absolute
+          left: 50%
+          top: -46%
+          width: 11px
+          height: 11px
+          background: $colorBlue
+          border-radius: 2px
+          transform: translateX(-50%) scale(1,1.2) rotate(45deg)
+  h2
+    margin-bottom: 24px
+  .list-wrapper
+    text-align: left
+//------------------------------
+        
+  
+// _6_ 景點清單個別item樣式
+.list
+  box-shadow: 0 0 10px rgba(black,.2)
+  display: inline-block
+  width: calc(50% - 8px)
+  margin-bottom: 36px
+  &:nth-child(odd)
+    margin-right: 16px
+  .top
+    padding: 15px 20px
+    color: #fff
+    background: #999
+    background-position: center
+    background-size: cover
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    cursor: pointer
+    .name
+      margin-bottom: 0
+      margin-top: 100px
+      pointer-events: none
+    .zone
+      margin-bottom: 0
+      pointer-events: none
+    
+  .bottom
+    text-align: left
+    padding: 15px
+    padding-left: 50px
+    position: relative
+    &>p
+      position: relative
+    &>p:last-child
+      margin-bottom: 0
+    .opentime::before,.address::before,.telephone::before
+      content: ''
+      display: block
+      position: absolute
+      left: -27px
+      top: 50%
+      transform: translateY(-50%)
+      
+    .opentime::before
+      +size(18px)
+      background: url('https://hexschool.github.io/JavaScript_HomeWork/assets/icons_clock.png')
+    .address::before
+      +size(16px,20px)
+      left: -26px
+      background: url('https://hexschool.github.io/JavaScript_HomeWork/assets/icons_pin.png')
+    .telephone::before
+      +size(12px,20px)
+      left: -24px
+      background: url('https://hexschool.github.io/JavaScript_HomeWork/assets/icons_phone.png')
+    
+    //查看開放時間詳細內容
+    .readmore
+      cursor: pointer
+      position: relative
+      &::after
+        content: ' ...查看詳細'
+        color: $colorBlue
+        transition: .3s
+      &:hover::after
+        content: attr(data-readmore)
+        display: block
+        padding: 10px
+        width: 80%
+        position: absolute
+        z-index: 10
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        background: #fff
+        border-radius: 5px
+        box-shadow: 0 0 5px rgba(black,.2)
+    
+    .free
+      margin: 0
+      color: $colorYellow
+      position: absolute
+      right: 20px
+      bottom: 15px
+//-------------------------------
+
+
+// _7_ 查看景點清單詳細內容的彈窗與遮罩
+.mask
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(black,.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  animation: maskFadeIn .5s 1 both
+  
+.detailPart
+  width: 60%
+  background: #fff
+  border-radius: 20px
+  padding: 25px
+  padding-bottom: 35px
+  box-shadow: 0 0 20px rgba(black,0.5)
+  animation: detailPartScaleIn .5s 1 both
+  .head
+    border-bottom: 1px solid $colorBlue
+    margin-bottom: 20px
+    padding-bottom: 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .name
+      margin: 0
+    .close
+      position: relative
+      +size(18px)
+      background: #fff
+      border: 2px solid $colorPink
+      border-radius: 50%
+      transform: rotate(45deg)
+      cursor: pointer
+      &::before,&::after
+        position: absolute
+        content: ''
+        display: block
+        +size(13px,2px)
+        background: $colorPink
+        top: 50%
+        left: 50%
+        
+      &::before
+        transform: translate(-50%,-50%)
+      &::after
+        transform: translate(-50%,-50%) rotate(90deg)
+  .body
+    // padding: 0 10px
+    .img
+      +size(100%,300px)
+      background-position: center
+      background-size: cover
+      margin-bottom: 20px
+    .description
+      font-size: 17px
+      max-height: 300px
+      overflow-y: auto
+      &::first-letter
+        font-size: 32px
+        color: $colorYellow
+  
+//-------------------------------
+
+
+// _8_ 分頁標籤樣式
+.page-list
+  color: $colorGray
+  font-size: 18px
+  text-align: center
+  margin-bottom: 20px
+  user-select: none
+  span
+    transition: .3s
+    display: inline-block
+    padding: 3px 8px
+  
+    &:not(.disabled)
+      cursor: pointer
+      &:hover
+        color: $colorYellow
+    &.disabled,&.current
+      pointer-events: none
+    &.disabled
+      opacity: 0.4
+    &.current
+      color: $colorYellow
+//-------------------------------    
+      
+
+// _9_ 頁尾資訊容器footer樣式
+footer
+  text-align: center
+  background: $colorBlue
+  padding: 24px 0
+  p
+    font-size: 14px
+    font-weight: 300
+  .footer-title
+    color: #fff
+  .source
+    color: $colorYellow
+    margin-bottom: 0
+//-------------------------------
+  
+// _10_ 跳至畫面頂部固定按鈕
+.go-top
+  +size(24px)
+  border-radius: 4px  
+  position: fixed
+  right: 28px
+  bottom: 12%
+  cursor: pointer
+  transition: 1.5s
+  background: url('https://hexschool.github.io/JavaScript_HomeWork/assets/btn_goTop.png')
+    
+  &.hidden
+    bottom: 70%
+    opacity: 0
+    visibility: hidden
+    transition: 1s
+    pointer-events: none
+//-------------------------------    
+      
+    
+// _11_ RWD 
+// @media screen and(max-width: 960px)
+//   //清單填滿寬度
+//   .list
+//     width: 100%
+//     margin: 0
+//     margin-bottom: 40px
+//     &:nth-child(odd)
+//       margin-right: 0
+//     .top
+//       .name
+//         margin-top: 130px
+  
+//   .detailPart
+//     width: 70%
+//     .body
+//       .img
+//         height: 250px
+    
+// @media screen and(max-width: 700px)
+//   header
+//     padding: 80px 0
+//     h1
+//       margin-bottom: 60px
+//     .hot
+//       width: 100%
+//       top: 100%
+//       h5
+//         margin-bottom: 25px
+//       .box
+//         flex-wrap: wrap
+//         justify-content: space-between
+//         padding: 0 40px
+//         margin-bottom: 20px
+        
+//   .content
+//     padding-top: 200px
+//     .line
+//       display: none
+      
+      
+// @media screen and(max-width: 590px)
+//   header
+//     .hot
+//       .box
+//         padding: 0 80px
+//         input:nth-of-type(1)
+//           margin-right: 70px
+//         input:nth-of-type(1),input:nth-of-type(2)
+//           margin-bottom: 30px
+//   .content
+//     padding-top: 260px
+    
+//   //小螢幕尺寸顯示詳細內容改滿版滑入
+//   .detailPart
+//     +size(100%)
+//     border-radius: 0
+//     box-sizing: border-box
+//-------------------------------
+
+
+//  _12_ 動畫keyframes
+//開啟
+//彈窗遮罩漸深動畫
+@keyframes maskFadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+//彈窗本體縮放動畫
+@keyframes detailPartScaleIn
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
+//關閉
+//彈窗遮罩漸深動畫
+@keyframes maskFadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+//彈窗本體縮放動畫
+@keyframes detailPartScaleOut
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(0)
+  

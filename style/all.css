@@ -1,0 +1,588 @@
+@charset "UTF-8";
+* {
+  font-family: 'Microsoft JhengHei';
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+input[type='button'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 9px 34px;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+input[type='button']:hover {
+  opacity: 0.7;
+}
+
+input[type='button']:active {
+  opacity: 1;
+}
+
+header {
+  padding: 100px 0;
+  position: relative;
+  text-align: center;
+  background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/the-urban-landscape-1698285.png");
+}
+
+header h1 {
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 96px;
+  letter-spacing: 4px;
+}
+
+header select {
+  width: 452px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 3px solid #fff;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+header .hot {
+  position: absolute;
+  left: 50%;
+  top: 93%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  background: #fff;
+  border-radius: 5px;
+  padding: 18px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header .hot .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .hot .box .pink {
+  background: #FFA782;
+}
+
+header .hot .box .yellow {
+  background: #F5D005;
+}
+
+header .hot .box .purple {
+  background: #8A82CC;
+}
+
+header .hot .box .blue {
+  background: #559AC8;
+}
+
+.content {
+  text-align: center;
+  padding: 40px;
+  padding-top: 140px;
+}
+
+.content .line {
+  border-bottom: 2px dashed #559AC8;
+  height: 2px;
+  position: relative;
+  margin: 0 20px 76px 20px;
+}
+
+.content .line .circle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border: 2px solid #559AC8;
+  border-radius: 50%;
+}
+
+.content .line .circle .symbol {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.content .line .circle .symbol::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -46%;
+  width: 11px;
+  height: 11px;
+  background: #559AC8;
+  border-radius: 2px;
+  -webkit-transform: translateX(-50%) scale(1, 1.2) rotate(45deg);
+          transform: translateX(-50%) scale(1, 1.2) rotate(45deg);
+}
+
+.content h2 {
+  margin-bottom: 24px;
+}
+
+.content .list-wrapper {
+  text-align: left;
+}
+
+.list {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: calc(50% - 8px);
+  margin-bottom: 36px;
+}
+
+.list:nth-child(odd) {
+  margin-right: 16px;
+}
+
+.list .top {
+  padding: 15px 20px;
+  color: #fff;
+  background: #999;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.list .top .name {
+  margin-bottom: 0;
+  margin-top: 100px;
+  pointer-events: none;
+}
+
+.list .top .zone {
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.list .bottom {
+  text-align: left;
+  padding: 15px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.list .bottom > p {
+  position: relative;
+}
+
+.list .bottom > p:last-child {
+  margin-bottom: 0;
+}
+
+.list .bottom .opentime::before, .list .bottom .address::before, .list .bottom .telephone::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -27px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.list .bottom .opentime::before {
+  width: 18px;
+  height: 18px;
+  background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/icons_clock.png");
+}
+
+.list .bottom .address::before {
+  width: 16px;
+  height: 20px;
+  left: -26px;
+  background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/icons_pin.png");
+}
+
+.list .bottom .telephone::before {
+  width: 12px;
+  height: 20px;
+  left: -24px;
+  background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/icons_phone.png");
+}
+
+.list .bottom .readmore {
+  cursor: pointer;
+  position: relative;
+}
+
+.list .bottom .readmore::after {
+  content: ' ...查看詳細';
+  color: #559AC8;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.list .bottom .readmore:hover::after {
+  content: attr(data-readmore);
+  display: block;
+  padding: 10px;
+  width: 80%;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.list .bottom .free {
+  margin: 0;
+  color: #F5D005;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: maskFadeIn .5s 1 both;
+          animation: maskFadeIn .5s 1 both;
+}
+
+.detailPart {
+  width: 60%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-animation: detailPartScaleIn .5s 1 both;
+          animation: detailPartScaleIn .5s 1 both;
+}
+
+.detailPart .head {
+  border-bottom: 1px solid #559AC8;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.detailPart .head .name {
+  margin: 0;
+}
+
+.detailPart .head .close {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 2px solid #FFA782;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.detailPart .head .close::before, .detailPart .head .close::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 13px;
+  height: 2px;
+  background: #FFA782;
+  top: 50%;
+  left: 50%;
+}
+
+.detailPart .head .close::before {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.detailPart .head .close::after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.detailPart .body .img {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.detailPart .body .description {
+  font-size: 17px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.detailPart .body .description::first-letter {
+  font-size: 32px;
+  color: #F5D005;
+}
+
+.page-list {
+  color: #4A4A4A;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.page-list span {
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: inline-block;
+  padding: 3px 8px;
+}
+
+.page-list span:not(.disabled) {
+  cursor: pointer;
+}
+
+.page-list span:not(.disabled):hover {
+  color: #F5D005;
+}
+
+.page-list span.disabled, .page-list span.current {
+  pointer-events: none;
+}
+
+.page-list span.disabled {
+  opacity: 0.4;
+}
+
+.page-list span.current {
+  color: #F5D005;
+}
+
+footer {
+  text-align: center;
+  background: #559AC8;
+  padding: 24px 0;
+}
+
+footer p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+footer .footer-title {
+  color: #fff;
+}
+
+footer .source {
+  color: #F5D005;
+  margin-bottom: 0;
+}
+
+.go-top {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  position: fixed;
+  right: 28px;
+  bottom: 12%;
+  cursor: pointer;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/btn_goTop.png");
+}
+
+.go-top.hidden {
+  bottom: 70%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
+  pointer-events: none;
+}
+
+@-webkit-keyframes maskFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes maskFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes detailPartScaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes detailPartScaleIn {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes maskFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes maskFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes detailPartScaleOut {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes detailPartScaleOut {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+/*# sourceMappingURL=all.css.map */
